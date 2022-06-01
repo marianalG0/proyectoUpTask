@@ -1,6 +1,12 @@
 <?php
+     session_start();
+
     include 'inc/func/funciones.php';
     include 'inc/templates/header.php';
+
+    if(isset($_GET['cerrar_sesion'])){
+        $_SESSION = array();
+    }
 ?>
 
     <div class="contenedor-formulario">
@@ -20,7 +26,7 @@
             </div>
 
             <div class="campo">
-                <a href="crear-cuenta.html">Crea una cuenta nueva</a>
+                <a href="crear-cuenta.php">Inicia sesión o Crea una cuenta nueva</a>
             </div>
         </form>
     </div>

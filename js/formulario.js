@@ -12,7 +12,7 @@ function validarRegistro(e) {
         tipo = document.querySelector('#tipo').value;
     if (usuario === '' || password === '') {
         //La validacion fallo
-        Swal.fire({
+        swal({
             type: 'error',
             title: 'Error!',
             text: 'Ambos campos son obligatorios!'

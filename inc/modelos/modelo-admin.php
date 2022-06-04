@@ -37,7 +37,7 @@ if ($accion === 'crear') {
     } catch (Exception $e) {
         //En caso de un error, tomar la excepcion
         $respuesta = array(
-            'pass' => $e->getMessage()
+            'error' => $e->getMessage()
         );
     }
 

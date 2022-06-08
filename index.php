@@ -57,7 +57,7 @@
                 <?php
                         // Obtiene las tareas del proyecto actual(modificado por ASCC video28) uso de php id_proyecto
                         $tareas = obtenerTareasProyecto($id_proyecto);
-                        if($tareas) {
+                        if($tareas !== false && $tareas-> num_rows > 0) {
                             //si hay tareas
                             foreach($tareas as $tarea): ?>
                                 <li id="tarea:<?php echo $tarea['id'] ?>" class="tarea">

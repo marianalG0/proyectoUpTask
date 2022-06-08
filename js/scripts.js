@@ -140,6 +140,11 @@ function agregarTarea(e) {
 
         // Ejecutarlo y respuesta
         xhr.onload = function() {
+            swal({
+                type: 'success',
+                title: 'Tarea Creada',
+                text: 'Presione Ctrl + R para refrescar'
+            });
             if(this.status === 200) {
                 // todo correcto
                 var respuesta = JSON.parse(xhr.responseText);
@@ -153,11 +158,6 @@ function agregarTarea(e) {
                     // se agrego correctamente
                     if(tipo === 'crear') {
                         // lanzar la alerta
-                        swal({
-                            type: 'success',
-                            title: 'Tarea Creada',
-                            text: 'La tarea: ' + resultado + ' se creo correctamente'
-                        });
 
                         // Seleccionar el parrafo con la lista vacia (Parte anexada por ASCC video35) Vamos yo puedo ya mero termino, si se puede no falta mucho!
                         var parrafoListaVacia = document.querySelectorAll('.lista-vacia');
@@ -303,9 +303,9 @@ function eliminarTareaBD(tarea){
     // on load
     xhr.onload = function(){
         if(this.status === 200){
-            console.log(JSON.parse(xhr.responseText));
+            //console.log(JSON.parse(xhr.responseText));
             // console.log(JSON)
-            // console.log(xhr.responseText);
+            console.log(xhr.responseText);
 
             //Comprobar que haya tareas restantes (Parte anexada por ASCC video35)
             var listaTareasRestantes = document.querySelectorAll('li.tarea');
